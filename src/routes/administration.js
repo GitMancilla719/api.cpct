@@ -12,7 +12,7 @@ router.post('/register',
   administrator.add_admin
 )
 
-router.post('/login', validate_token, administrator.login_admin)
+router.post('/login', administrator.login_admin)
 
 router.get('/', validate_token, administrator.get_all_accounts)
 router.delete('/', validate_token, administrator.delete_account)
