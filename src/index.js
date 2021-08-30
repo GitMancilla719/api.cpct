@@ -28,11 +28,9 @@ app.use('/vaccination', vaccination)
 app.use('/admin', administration)
 
 const PORT = process.env.PORT || 5000
-const username = process.env.USERNAME || process.env.USERNAME_LOCAL
-const password = process.env.PASSWORD || process.env.PASSWORD_LOCAL
 
 mongoose
-  .connect(`mongodb+srv://${username}:${password}@projects.ci7ba.mongodb.net/cpct?retryWrites=true&w=majority`, {
+  .connect(process.env.DB_CONN, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
