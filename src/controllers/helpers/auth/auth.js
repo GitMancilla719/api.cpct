@@ -15,12 +15,9 @@ const create_tokens = (user) => {
 }
 
 const validate_token = (req, res, next) => {
-  // const access_token = req.cookies['access_token']
-  const access_token = req.headers.Authorization.replace('Bearer ', '')
+  const access_token = req.headers.authorization.replace('Bearer ', '')
 
   if (!access_token) return res.status(401).json({ error_msg: 'Unauthorized.' })
-
-  // const token = JSON.parse(access_token)
 
   try {
     const valid_token = verify(access_token, process.env.JWT_SECRET)
