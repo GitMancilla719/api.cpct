@@ -15,12 +15,19 @@ const administration = require('./routes/administration')
 const app = express()
 
 //middlewares
-app.use(cors())
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+)
 app.use(express.json())
 app.use(cookieParser())
 
 //Routes
-app.get('/', (req, res) => {res.status(200).json({msg: 'hello'})})
+app.get('/', (req, res) => {
+  res.status(200).json({ msg: 'hello' })
+})
 app.use('/records', records)
 app.use('/logs', logs)
 app.use('/facilities', facilities)
