@@ -22,12 +22,12 @@ const login_admin = async (req, res) => {
 
     const access_token = create_tokens(check_username)
 
-    res.cookie('access_token', JSON.stringify(access_token), {
-      maxAge: 60 * 60 * 24 * 30 * 1000, //expires in 30 days
-      // httpOnly: true //protect cookies
-    })
+    // res.cookie('access_token', JSON.stringify(access_token), {
+    //   maxAge: 60 * 60 * 24 * 30 * 1000, //expires in 30 days
+    //   // httpOnly: true //protect cookies
+    // })
 
-    res.status(201).json({ msg: 'Logged in successfully.' })
+    res.status(201).json({ msg: 'Logged in successfully.', access_token })
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
