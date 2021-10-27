@@ -16,7 +16,8 @@ const app = express()
 
 //middlewares
 app.use(
-  // cors({
+  cors()
+  //   {
   //   origin: [process.env.APP_BASE_URL, '*'],
   //   methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
   //   allowedHeaders: [
@@ -36,7 +37,6 @@ app.use(
   //   credentials: true,
   //   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   // }
-  )
 )
 app.use(express.json())
 app.use(cookieParser())
