@@ -16,26 +16,27 @@ const app = express()
 
 //middlewares
 app.use(
-  cors({
-    origin: [process.env.APP_BASE_URL, '*'],
-    methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: [
-      'DNT',
-      'X-CustomHeader',
-      'Keep-Alive',
-      'User-Agent',
-      'X-Requested-With',
-      'If-Modified-Since',
-      'Cache-Control',
-      'Content-Type',
-      'Content-Range',
-      'Range',
-      'Authorization',
-      'timezone',
-    ],
-    credentials: true,
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  })
+  // cors({
+  //   origin: [process.env.APP_BASE_URL, '*'],
+  //   methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+  //   allowedHeaders: [
+  //     'DNT',
+  //     'X-CustomHeader',
+  //     'Keep-Alive',
+  //     'User-Agent',
+  //     'X-Requested-With',
+  //     'If-Modified-Since',
+  //     'Cache-Control',
+  //     'Content-Type',
+  //     'Content-Range',
+  //     'Range',
+  //     'Authorization',
+  //     'timezone',
+  //   ],
+  //   credentials: true,
+  //   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  // }
+  )
 )
 app.use(express.json())
 app.use(cookieParser())
